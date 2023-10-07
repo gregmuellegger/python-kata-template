@@ -10,7 +10,13 @@
             "problemMatcher": []
         },
         {
-            "label": "just forget current kata",
+            "label": "just attempt current kata",
+            "type": "shell",
+            "command": "just attempt ${input:attempt-name}",
+            "problemMatcher": []
+        },
+        {
+            "label": "just forget current kata/attempt",
             "type": "shell",
             "command": "just forget",
             "problemMatcher": []
@@ -20,6 +26,11 @@
         {
             "id": "kata-name",
             "description": "Name of the kata",
+            "type": "promptString"
+        },
+        {
+            "id": "attempt-name",
+            "description": "Name of your attempt for the selected kata",
             "type": "promptString"
         },
     ]
