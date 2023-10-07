@@ -12,7 +12,8 @@
 			"extensions": [
 				"skellock.just",
 				"eamodio.gitlens",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"tamasfe.even-better-toml"
 			]
 		}
 	},
