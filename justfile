@@ -1,6 +1,6 @@
 # Start a new kata, by creating a new branch.
 start name:
-    git checkout -b {{name}}-`date +"%Y-%m-%d"` main
+    git checkout -b kata/{{name}} main
     code kata/code.py kata/code_test.py
 
 # Forget the current attempt and switch back to main.
