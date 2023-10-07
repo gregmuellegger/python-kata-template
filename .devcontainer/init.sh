@@ -1,2 +1,7 @@
 #!/bin/bash
-pip install poetry
+pipx install poetry
+
+virtualenv ~/venv
+poetry env use ~/venv/bin/python
+
+poetry install

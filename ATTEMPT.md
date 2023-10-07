@@ -79,3 +79,59 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 Committed.
+
+## Adding dependencies
+
+Let's add pytest as dev dependency:
+
+```
+poetry add pytest --dev
+```
+
+Well this broke poetry, it now only returns this:
+
+```
+vscode ➜ /workspaces/python-kata-template (attempt/pyproject-toml-poetry) $ poetry add pytest --dev
+
+No module named 'packaging'
+```
+
+Presumably because it would install things globally, but we are not working as
+root in the container. So what will we do?
+
+I would suggest actually switching to a venv that we manage ourselves.
+
+Like this during init:
+
+```
+pipx install poetry
+poetry env use ~/venv/bin/python
+```
+
+Ok now it works:
+
+```
+vscode ➜ /workspaces/python-kata-template (attempt/pyproject-toml-poetry) $ poetry add pytest --group dev
+Using version ^7.4.2 for pytest
+
+Updating dependencies
+Resolving dependencies... (0.3s)
+
+Package operations: 4 installs, 0 updates, 0 removals
+
+  • Installing iniconfig (2.0.0)
+  • Installing packaging (23.2)
+  • Installing pluggy (1.3.0)
+  • Installing pytest (7.4.2)
+
+Writing lock file
+```
+
+CONTINUE: I wonder if it is better to place the environment in .venv which would
+persist devcontainer rebuilds? However then it becomes less reproduciable.
+
+Continue with how to build a shipable package.
+
+QUESTIONS:
+- How to auto select correct python interpreter in devcontainer?
+- How to build package?
