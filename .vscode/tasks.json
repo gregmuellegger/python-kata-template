@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "just start new kata",
+            "type": "shell",
+            "command": "just start ${input:kata-name}",
+            "problemMatcher": []
+        },
+        {
+            "label": "just forget current kata",
+            "type": "shell",
+            "command": "just forget",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "kata-name",
+            "description": "Name of the kata",
+            "type": "promptString"
+        },
+    ]
+}
