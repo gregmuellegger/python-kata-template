@@ -15,22 +15,6 @@ attempt name:
     echo "# {{name}}\n\nDescribe how you want to attempt the kata in this iteration." > ATTEMPT.md
     code ATTEMPT.md
 
-# Create an attempt for a kata currently checked out.
-derivative name:
-    # Make sure the current branch starts with "kata/"
-    [ $(git rev-parse --abbrev-ref HEAD | head -c 5) = "kata/" ]
-
-    # Create branch with name "attempt/nameOfKata-yourName"
-    git checkout -b attempt/$(git rev-parse --abbrev-ref HEAD | cut -c6-)-{{name}} HEAD
-
-# Create an attempt for a kata currently checked out.
-derivative name:
-    # Make sure the current branch starts with "kata/"
-    [ $(git rev-parse --abbrev-ref HEAD | head -c 5) = "kata/" ]
-
-    # Create branch with name "attempt/nameOfKata-yourName"
-    git checkout -b attempt/$(git rev-parse --abbrev-ref HEAD | cut -c6-)-{{name}} HEAD
-
 # Forget the current attempt and switch back to main.
 forget:
     # Check that we are not on main.
