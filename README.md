@@ -30,7 +30,7 @@ just attempt name-of-your-attempt
 ## Creating a new kata
 
 ```
-just start kata-name
+just create kata-name
 ```
 
-(Or run vs code task `start`)
+(Or run vs code task `create`)

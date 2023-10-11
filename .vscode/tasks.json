@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "just start new kata",
+            "label": "just create new kata",
             "type": "shell",
-            "command": "just start ${input:kata-name}",
+            "command": "just create ${input:kata-name}",
             "problemMatcher": []
         },
         {
